@@ -1,0 +1,40 @@
+<div class="form-container">
+  <h2>Novo Cliente</h2>
+  
+  <form (ngSubmit)="submeter()">
+    <label for="input-nome">Nome</label><br />
+    <input
+      class="input-simples"
+      id="input-nome"
+      name="input-nome"
+      placeholder="Digite o nome completo"
+      type="text"
+      [(ngModel)]="cliente.nome"
+      required
+    />
+
+    <label for="input-email">E-mail</label><br />
+    <input
+      class="input-simples"
+      id="input-email"
+      name="input-email"
+      placeholder="email@exemplo.com"
+      type="email"
+      [(ngModel)]="cliente.email"
+      required
+    />
+
+    <label for="input-telefone">Telefone</label><br />
+    <input
+      class="input-simples"
+      id="input-telefone"
+      name="input-telefone"
+      placeholder="(11) 99999-9999"
+      type="tel"
+      [(ngModel)]="cliente.telefone"
+      required
+    />
+
+    <button class="input-submeter" type="submit">Cadastrar</button>
+  </form>
+</div>

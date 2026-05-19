@@ -1,0 +1,23 @@
+<div class="form-container">
+  <h2>Relatório de Vendas</h2>
+  <table class="tabela-estilizada">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Cliente ID</th>
+        <th>Evento ID</th>
+        <th>Data</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of listaPedidos">
+        <td>{{ p.id }}</td>
+        <td>{{ p.clienteId }}</td>
+        <td>{{ p.eventoId }}</td>
+        <td>{{ p.data }}</td>
+        <td>R$ {{ p.total }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

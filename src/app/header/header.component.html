@@ -1,0 +1,73 @@
+<aside class="sidebar" [ngClass]="{'fechado': !menuExpandido}">
+
+    <div class="sidebar-header">
+        <div class="logo" *ngIf="menuExpandido">🎵 Casa de Show</div>
+        <button class="btn-hamburguer" (click)="alternarMenu()" title="Ocultar/Expandir Menu">
+            ☰
+        </button>
+    </div>
+
+    <nav class="sidebar-menu">
+        <span class="categoria" *ngIf="menuExpandido">Eventos</span>
+        <ul>
+            <li>
+                <a routerLink="/eventos-listagem" routerLinkActive="active" title="Agenda">
+                    <span class="icone">📅</span>
+                    <span class="texto" *ngIf="menuExpandido">Agenda</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/eventos-cadastrar" routerLinkActive="active" title="Novo Evento">
+                    <span class="icone">➕</span>
+                    <span class="texto" *ngIf="menuExpandido">Novo Evento</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/eventos-consultar" routerLinkActive="active" title="Buscar Evento">
+                    <span class="icone">🔍</span>
+                    <span class="texto" *ngIf="menuExpandido">Buscar Evento</span>
+                </a>
+            </li>
+        </ul>
+
+        <hr class="divisor" />
+
+        <span class="categoria" *ngIf="menuExpandido">Clientes</span>
+        <ul>
+            <li>
+                <a routerLink="/clientes-listagem" routerLinkActive="active" title="Listagem de Clientes">
+                    <span class="icone">👥</span>
+                    <span class="texto" *ngIf="menuExpandido">Listagem</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/clientes-cadastrar" routerLinkActive="active" title="Novo Cliente">
+                    <span class="icone">👤</span>
+                    <span class="texto" *ngIf="menuExpandido">Novo Cliente</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/clientes-consultar" routerLinkActive="active" title="Buscar Cliente">
+                    <span class="icone">🔍</span>
+                    <span class="texto" *ngIf="menuExpandido">Buscar Cliente</span>
+                </a>
+            </li>
+        </ul>
+        <hr class="divisor" />
+        <span class="categoria" *ngIf="menuExpandido">Vendas</span>
+        <ul>
+            <li>
+                <a routerLink="/pedidos-listagem" routerLinkActive="active" title="Relatório de Vendas">
+                    <span class="icone">🎫</span>
+                    <span class="texto" *ngIf="menuExpandido">Relatório</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/pedidos-cadastrar" routerLinkActive="active" title="Novo Ingresso">
+                    <span class="icone">➕</span>
+                    <span class="texto" *ngIf="menuExpandido">Nova Venda</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</aside>

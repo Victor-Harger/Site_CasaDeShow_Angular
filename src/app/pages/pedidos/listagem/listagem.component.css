@@ -1,0 +1,12 @@
+.form-container { 
+  max-width: 800px; 
+  margin: 40px auto; 
+  padding: 20px; 
+  background-color: #ffffff; 
+  border: 1px solid #ddd; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+}
+.tabela-estilizada { width: 100%; border-collapse: collapse; margin-top: 20px; }
+.tabela-estilizada th, .tabela-estilizada td { padding: 12px; border-bottom: 1px solid #eee; text-align: left; }
+.tabela-estilizada th { background-color: #f8f9fa; color: #2c3e50; }

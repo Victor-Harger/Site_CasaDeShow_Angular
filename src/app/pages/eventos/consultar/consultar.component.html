@@ -1,0 +1,29 @@
+<div class="consulta-container">
+  <h2>Consultar Evento</h2>
+  <form (ngSubmit)="buscarEvento()">
+    <label for="input-id">Informe o ID do Evento:</label>
+    <input 
+      type="number" 
+      id="input-id" 
+      name="input-id" 
+      [(ngModel)]="idBusca" 
+      class="input-simples" 
+      required 
+    />
+    <button type="submit" class="btn-buscar">Buscar Evento</button>
+  </form>
+
+  <div *ngIf="eventoEncontrado" class="evento-dados">
+    <h3>Dados do Evento</h3>
+    <p><strong>ID:</strong> {{ eventoEncontrado.id }}</p>
+    <p><strong>Nome do Evento:</strong> {{ eventoEncontrado.nome }}</p>
+    <p><strong>Data:</strong> {{ eventoEncontrado.data }}</p>
+    <p><strong>Banda / Atração:</strong> {{ eventoEncontrado.banda }}</p>
+    <p><strong>Capacidade:</strong> {{ eventoEncontrado.capacidade }} pessoas</p>
+    <p><strong>Preço do Ingresso:</strong> R$ {{ eventoEncontrado.precoIngresso }}</p>
+  </div>
+
+  <div *ngIf="erroBusca" class="erro-busca">
+    {{ erroBusca }}
+  </div>
+</div>

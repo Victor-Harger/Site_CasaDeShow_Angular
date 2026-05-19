@@ -1,0 +1,64 @@
+.excluir-container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff8f8;
+  border: 1px solid #f5c2c2;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #c0392b; /* Vermelho escuro */
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.input-simples {
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.btn-excluir {
+  padding: 12px;
+  background-color: #e74c3c; 
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-excluir:hover {
+  background-color: #c0392b;
+}
+
+.sucesso-mensagem {
+  margin-top: 20px;
+  color: #27ae60;
+  font-weight: bold;
+  text-align: center;
+}
+
+.erro-mensagem {
+  margin-top: 20px;
+  color: #e74c3c;
+  font-weight: bold;
+  text-align: center;
+}

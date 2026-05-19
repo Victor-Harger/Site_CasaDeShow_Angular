@@ -1,0 +1,32 @@
+<div class="content-container">
+  <h2>Agenda de Eventos</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome do Evento</th>
+        <th>Data</th>
+        <th>Banda</th>
+        <th>Capacidade</th>
+        <th>Preço (R$)</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (evento of listaEventos; track evento.id) {
+      <tr>
+        <td>{{ evento.id }}</td>
+        <td>{{ evento.nome }}</td>
+        <td>{{ evento.data }}</td>
+        <td>{{ evento.banda }}</td>
+        <td>{{ evento.capacidade }}</td>
+        <td>{{ evento.precoIngresso }}</td>
+        <td class="acoes">
+          <button class="btn-editar" [routerLink]="['/eventos-alterar', evento.id]">Editar</button>
+          <button class="btn-excluir" (click)="excluir(evento.id)">Excluir</button>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

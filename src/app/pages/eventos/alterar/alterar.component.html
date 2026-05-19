@@ -1,0 +1,45 @@
+<div class="form-container">
+    <h2>Alterar Dados do Evento</h2>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        
+        <label>Nome do Evento:</label>
+        <input formControlName="nome" type="text" class="input-simples"
+            [ngClass]="{'erro-input': form.get('nome')?.invalid && form.get('nome')?.touched}" />
+        <small class="texto-erro" *ngIf="form.get('nome')?.invalid && form.get('nome')?.touched">
+            O nome é obrigatório!
+        </small>
+
+        <label>Data:</label>
+        <input formControlName="data" type="date" class="input-simples"
+            [ngClass]="{'erro-input': form.get('data')?.invalid && form.get('data')?.touched}" />
+        <small class="texto-erro" *ngIf="form.get('data')?.invalid && form.get('data')?.touched">
+            A data é obrigatória!
+        </small>
+
+        <label>Banda / Atração:</label>
+        <input formControlName="banda" type="text" class="input-simples"
+            [ngClass]="{'erro-input': form.get('banda')?.invalid && form.get('banda')?.touched}" />
+        <small class="texto-erro" *ngIf="form.get('banda')?.invalid && form.get('banda')?.touched">
+            A banda é obrigatória!
+        </small>
+
+        <label>Capacidade:</label>
+        <input formControlName="capacidade" type="number" min="0" class="input-simples"
+            oninput="this.value = Math.abs(this.value)"
+            [ngClass]="{'erro-input': form.get('capacidade')?.invalid && form.get('capacidade')?.touched}" />
+        <small class="texto-erro" *ngIf="form.get('capacidade')?.invalid && form.get('capacidade')?.touched">
+            Capacidade inválida!
+        </small>
+
+        <label>Preço do Ingresso (R$):</label>
+        <input formControlName="precoIngresso" type="number" min="0" step="0.01" class="input-simples"
+            oninput="this.value = Math.abs(this.value)"
+            [ngClass]="{'erro-input': form.get('precoIngresso')?.invalid && form.get('precoIngresso')?.touched}" />
+        <small class="texto-erro" *ngIf="form.get('precoIngresso')?.invalid && form.get('precoIngresso')?.touched">
+            Preço inválido!
+        </small>
+
+        <button type="submit" class="btn-salvar" [disabled]="form.invalid">Salvar Alterações</button>
+    </form>
+</div>

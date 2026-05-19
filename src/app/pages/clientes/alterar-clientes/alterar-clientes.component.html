@@ -1,0 +1,16 @@
+<div class="form-container">
+  <h2>Alterar Dados do Cliente</h2>
+  
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label>Nome:</label>
+    <input formControlName="nome" type="text" class="input-simples" />
+
+    <label>Email:</label>
+    <input formControlName="email" type="email" class="input-simples" />
+
+    <label>Telefone:</label>
+    <input formControlName="telefone" type="text" class="input-simples" />
+
+    <button type="submit" class="btn-salvar">Salvar Alterações</button>
+  </form>
+</div>

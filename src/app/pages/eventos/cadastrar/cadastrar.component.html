@@ -1,0 +1,23 @@
+<div class="form-container">
+  <h2>Novo Evento</h2>
+  
+  <form #meuForm="ngForm" (ngSubmit)="submeter()">
+    
+    <label for="input-nome">Nome do Evento</label><br />
+    <input class="input-simples" id="input-nome" name="input-nome" placeholder="Ex: Noite do Rock" type="text" [(ngModel)]="evento.nome" required />
+
+    <label for="input-data">Data</label><br />
+    <input class="input-simples" id="input-data" name="input-data" type="date" [(ngModel)]="evento.data" required />
+
+    <label for="input-banda">Banda / Atração</label><br />
+    <input class="input-simples" id="input-banda" name="input-banda" placeholder="Nome da atração principal" type="text" [(ngModel)]="evento.banda" required />
+
+    <label for="input-capacidade">Capacidade de Público</label><br />
+    <input class="input-simples" id="input-capacidade" name="input-capacidade" placeholder="Ex: 500" type="number" min="0" oninput="this.value = Math.abs(this.value)" [(ngModel)]="evento.capacidade" required />
+
+    <label for="input-preco">Preço do Ingresso (R$)</label><br />
+    <input class="input-simples" id="input-preco" name="input-preco" placeholder="Ex: 80.00" type="number" min="0" step="0.01" oninput="this.value = Math.abs(this.value)" [(ngModel)]="evento.precoIngresso" required />
+
+    <button class="input-submeter" type="submit" [disabled]="meuForm.invalid">Cadastrar Evento</button>
+  </form>
+</div>

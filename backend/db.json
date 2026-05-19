@@ -1,0 +1,35 @@
+{
+  "eventos": [
+    {
+      "id": 2,
+      "nome": "Sertanejo VIP",
+      "data": "2026-06-20",
+      "banda": "Dupla XP",
+      "capacidade": 800,
+      "precoIngresso": 120
+    }
+  ],
+  "clientes": [
+    {
+      "id": 1,
+      "nome": "Enzo",
+      "email": "enzo@gmail.com",
+      "telefone": "(11)97654-0075"
+    },
+    {
+      "id": 2,
+      "nome": "Valentina",
+      "email": "valentina@gmail.com",
+      "telefone": "(11)98765-9087"
+    }
+  ],
+  "pedidos": [
+    {
+      "id": 1,
+      "clienteId": 1,
+      "eventoId": 2,
+      "data": "2026-05-19",
+      "total": 120
+    }
+  ]
+}
