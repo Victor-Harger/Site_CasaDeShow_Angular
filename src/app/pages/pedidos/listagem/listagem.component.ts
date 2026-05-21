@@ -8,7 +8,8 @@ import { Pedido } from '../../../core/services/types/types';
   selector: 'app-listagem-pedido',
   standalone: true,
   imports: [CommonModule, RouterModule],
-  templateUrl: './listagem.component.html'
+  templateUrl: './listagem.component.html',
+  styleUrl: './listagem.component.css' // <--- É ESTA LINHA QUE ESTAVA FALTANDO!
 })
 export class ListagemPedidoComponent implements OnInit {
   listaPedidos: Pedido[] = [];
@@ -19,5 +20,12 @@ export class ListagemPedidoComponent implements OnInit {
     this.service.listar().subscribe(dados => {
       this.listaPedidos = dados;
     });
+  }
+  calcularTotalArrecadado(): number {
+    return this.listaPedidos.reduce((acumulador, pedido) => acumulador + Number(pedido.total), 0);
+  }
+
+  calcularIngressosVendidos(): number {
+    return this.listaPedidos.length;
   }
 }

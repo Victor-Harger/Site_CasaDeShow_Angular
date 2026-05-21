@@ -1,25 +1,53 @@
 <div class="form-container">
   <h2>Registrar Nova Venda</h2>
-  
+
   <form (ngSubmit)="submeter()" #formVenda="ngForm">
-    
     <label>Selecione o Cliente</label>
-    <select [(ngModel)]="pedido.clienteId" name="clienteId" class="input-simples" required>
+    <select
+      [(ngModel)]="pedido.clienteId"
+      name="clienteId"
+      class="input-simples"
+      required
+    >
       <option value="" disabled selected>Escolha um cliente...</option>
-      <option *ngFor="let c of listaClientes" [value]="c.id">{{c.nome}}</option>
+      <option *ngFor="let c of listaClientes" [value]="c.id">
+        {{ c.nome }}
+      </option>
     </select>
 
     <label>Selecione o Evento</label>
-    <select [(ngModel)]="pedido.eventoId" name="eventoId" class="input-simples" required>
+    <select
+      [(ngModel)]="pedido.eventoId"
+      name="eventoId"
+      class="input-simples"
+      required
+    >
       <option value="" disabled selected>Escolha o show...</option>
-      <option *ngFor="let e of listaEventos" [value]="e.id">{{e.nome}}</option>
+      <option *ngFor="let e of listaEventos" [value]="e.id">
+        {{ e.nome }}
+      </option>
     </select>
 
     <label>Data da Venda</label>
-    <input type="date" [(ngModel)]="pedido.data" name="data" class="input-simples" required />
+    <input
+      type="date"
+      [(ngModel)]="pedido.data"
+      name="data"
+      class="input-simples"
+      required
+    />
 
     <label>Valor Total (R$)</label>
-    <input type="number" [(ngModel)]="pedido.total" name="total" class="input-simples" placeholder="0.00" min="0" required />
+    <input
+      type="number"
+      [(ngModel)]="pedido.total"
+      name="total"
+      class="input-simples"
+      placeholder="0.00"
+      min="0"
+      (keydown)="bloquearNegativos($event)"
+      required
+    />
 
     <button type="submit" class="input-submeter" [disabled]="formVenda.invalid">
       Confirmar Venda

@@ -36,4 +36,11 @@ export class CadastrarPedidoComponent implements OnInit {
       this.router.navigate(['/pedidos-listagem']);
     });
   }
+
+  // Função que permite números, mas bloqueia o "menos" e o "e"
+  bloquearNegativos(event: KeyboardEvent) {
+    if (event.key === '-' || event.key === 'e') {
+      event.preventDefault();
+    }
+  }
 }

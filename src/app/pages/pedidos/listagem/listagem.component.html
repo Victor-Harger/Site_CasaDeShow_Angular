@@ -1,5 +1,25 @@
 <div class="form-container">
-  <h2>Relatório de Vendas</h2>
+  
+  <div class="dashboard-header">
+    <div class="kpi-card bg-azul">
+      <span class="kpi-icone">🎟️</span>
+      <div class="kpi-info">
+        <span class="kpi-titulo">Ingressos Vendidos</span>
+        <span class="kpi-valor">{{ calcularIngressosVendidos() }}</span>
+      </div>
+    </div>
+
+    <div class="kpi-card bg-verde">
+      <span class="kpi-icone">💰</span>
+      <div class="kpi-info">
+        <span class="kpi-titulo">Faturamento Total</span>
+        <span class="kpi-valor">R$ {{ calcularTotalArrecadado() | number:'1.2-2' }}</span>
+      </div>
+    </div>
+  </div>
+
+  <h2>Histórico de Vendas</h2>
+  
   <table class="tabela-estilizada">
     <thead>
       <tr>
