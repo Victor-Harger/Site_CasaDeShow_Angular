@@ -47,17 +47,16 @@ export class AlterarClientesComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.form.valid) {
-      // Junta o ID da URL com os dados novos do formulário
-      const clienteAtualizado: Cliente = {
-        id: this.idCliente,
-        ...this.form.value 
-      };
+    // Não bloqueia com form.valid, pois aqui não há Validators.
+    // Assim o PUT é enviado sempre que o usuário clicar em salvar.
+    const clienteAtualizado: Cliente = {
+      id: this.idCliente,
+      ...this.form.value
+    };
 
-      // Manda pro banco e volta pra listagem
-      this.service.editar(clienteAtualizado).subscribe(() => {
-        this.router.navigate(['/clientes-listagem']);
-      });
-    }
+    this.service.editar(clienteAtualizado).subscribe(() => {
+      this.router.navigate(['/clientes-listagem']);
+    });
   }
 }
+

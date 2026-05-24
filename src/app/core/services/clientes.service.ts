@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 import { Cliente } from './types/types';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientesService {
-  // Endereço da API falsa para CLIENTES
   private readonly API = 'http://localhost:3000/clientes';
 
   constructor(private http: HttpClient) { }
@@ -17,7 +17,16 @@ export class ClientesService {
   }
 
   incluir(cliente: Cliente): Observable<Cliente> {
-    return this.http.post<Cliente>(this.API, cliente);
+    return this.http.get<Cliente[]>(this.API).pipe(
+      switchMap(clientes => {
+        const novoId = clientes.length > 0
+          ? Math.max(...clientes.map(c => Number(c.id))) + 1
+          : 1;
+
+        const novoCliente = { ...cliente, id: novoId };
+        return this.http.post<Cliente>(this.API, novoCliente);
+      })
+    );
   }
 
   buscarPorId(id: number | string): Observable<Cliente> {

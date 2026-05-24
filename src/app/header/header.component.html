@@ -1,73 +1,48 @@
-<aside class="sidebar" [ngClass]="{'fechado': !menuExpandido}">
+<header id="topbar" [class.scrolled]="scrolled">
 
-    <div class="sidebar-header">
-        <div class="logo" *ngIf="menuExpandido">🎵 Casa de Show</div>
-        <button class="btn-hamburguer" (click)="alternarMenu()" title="Ocultar/Expandir Menu">
-            ☰
-        </button>
-    </div>
+  <!-- BRAND -->
+  <a routerLink="/" class="brand">
+    <div class="brand-mark">N</div>
+    <span class="brand-name">Noir<span>Espaço</span></span>
+  </a>
 
-    <nav class="sidebar-menu">
-        <span class="categoria" *ngIf="menuExpandido">Eventos</span>
-        <ul>
-            <li>
-                <a routerLink="/eventos-listagem" routerLinkActive="active" title="Agenda">
-                    <span class="icone">📅</span>
-                    <span class="texto" *ngIf="menuExpandido">Agenda</span>
-                </a>
-            </li>
-            <li>
-                <a routerLink="/eventos-cadastrar" routerLinkActive="active" title="Novo Evento">
-                    <span class="icone">➕</span>
-                    <span class="texto" *ngIf="menuExpandido">Novo Evento</span>
-                </a>
-            </li>
-            <li>
-                <a routerLink="/eventos-consultar" routerLinkActive="active" title="Buscar Evento">
-                    <span class="icone">🔍</span>
-                    <span class="texto" *ngIf="menuExpandido">Buscar Evento</span>
-                </a>
-            </li>
-        </ul>
+  <!-- NAV DESKTOP -->
+  <nav class="nav-desktop">
+    <a routerLink="/eventos-listagem"  routerLinkActive="active">Agenda</a>
+    <a routerLink="/clientes-listagem" routerLinkActive="active">Clientes</a>
+    <a routerLink="/pedidos-listagem"  routerLinkActive="active">Vendas</a>
+  </nav>
 
-        <hr class="divisor" />
+  <!-- AÇÕES -->
+  <div class="topbar-actions">
+    <a routerLink="/eventos-cadastrar" class="btn-primary">+ Novo Evento</a>
 
-        <span class="categoria" *ngIf="menuExpandido">Clientes</span>
-        <ul>
-            <li>
-                <a routerLink="/clientes-listagem" routerLinkActive="active" title="Listagem de Clientes">
-                    <span class="icone">👥</span>
-                    <span class="texto" *ngIf="menuExpandido">Listagem</span>
-                </a>
-            </li>
-            <li>
-                <a routerLink="/clientes-cadastrar" routerLinkActive="active" title="Novo Cliente">
-                    <span class="icone">👤</span>
-                    <span class="texto" *ngIf="menuExpandido">Novo Cliente</span>
-                </a>
-            </li>
-            <li>
-                <a routerLink="/clientes-consultar" routerLinkActive="active" title="Buscar Cliente">
-                    <span class="icone">🔍</span>
-                    <span class="texto" *ngIf="menuExpandido">Buscar Cliente</span>
-                </a>
-            </li>
-        </ul>
-        <hr class="divisor" />
-        <span class="categoria" *ngIf="menuExpandido">Vendas</span>
-        <ul>
-            <li>
-                <a routerLink="/pedidos-listagem" routerLinkActive="active" title="Relatório de Vendas">
-                    <span class="icone">🎫</span>
-                    <span class="texto" *ngIf="menuExpandido">Relatório</span>
-                </a>
-            </li>
-            <li>
-                <a routerLink="/pedidos-cadastrar" routerLinkActive="active" title="Novo Ingresso">
-                    <span class="icone">➕</span>
-                    <span class="texto" *ngIf="menuExpandido">Nova Venda</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</aside>
+    <!-- HAMBURGUER MOBILE -->
+    <button
+      class="hamburger"
+      [class.open]="mobileMenuAberto"
+      (click)="toggleMobileMenu()"
+      aria-label="Menu"
+      [attr.aria-expanded]="mobileMenuAberto">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+</header>
+
+<!-- MOBILE MENU -->
+<nav id="mobile-menu" [class.open]="mobileMenuAberto" (click)="fecharMobileMenu()">
+  <a routerLink="/eventos-listagem"   routerLinkActive="active">Agenda</a>
+  <a routerLink="/eventos-cadastrar"  routerLinkActive="active">Novo Evento</a>
+  <a routerLink="/eventos-consultar"  routerLinkActive="active">Buscar Evento</a>
+  <hr class="mobile-divisor" />
+  <a routerLink="/clientes-listagem"  routerLinkActive="active">Clientes</a>
+  <a routerLink="/clientes-cadastrar" routerLinkActive="active">Novo Cliente</a>
+  <a routerLink="/clientes-consultar" routerLinkActive="active">Buscar Cliente</a>
+  <hr class="mobile-divisor" />
+  <a routerLink="/pedidos-listagem"   routerLinkActive="active">Relatório de Vendas</a>
+  <a routerLink="/pedidos-cadastrar"  routerLinkActive="active">Nova Venda</a>
+  <a routerLink="/eventos-cadastrar" class="btn-primary">+ Novo Evento</a>
+</nav>

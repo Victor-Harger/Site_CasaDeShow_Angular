@@ -1,5 +1,8 @@
 import { Routes } from '@angular/router';
 
+// Layout
+import { FuncionariosLayoutComponent } from './layouts/funcionarios-layout/funcionarios-layout.component';
+
 // Imports de Eventos
 import { ListagemComponent } from './pages/eventos/listagem/listagem.component';
 import { CadastrarComponent } from './pages/eventos/cadastrar/cadastrar.component';
@@ -16,29 +19,43 @@ import { ExcluirClientesComponent } from './pages/clientes/excluir-clientes/excl
 
 // Imports de Pedidos
 import { ListagemPedidoComponent } from './pages/pedidos/listagem/listagem.component';
-// Certifique-se de que o caminho abaixo reflete a pasta 'cadastrar-pedido' que você criou:
 import { CadastrarPedidoComponent } from './pages/pedidos/cadastrar-pedido/cadastrar-pedido.component';
 
+// Imports públicos
+import { IngressosComponent } from './pages/ingressos/ingressos.component';
+import { LoginComponent } from './pages/login/login.component';
+
 export const routes: Routes = [
-  { path: '', redirectTo: 'eventos-listagem', pathMatch: 'full' },
 
-  // Rotas de Eventos
-  { path: 'eventos-listagem', component: ListagemComponent },
-  { path: 'eventos-cadastrar', component: CadastrarComponent },
-  { path: 'eventos-consultar', component: ConsultarComponent },
-  { path: 'eventos-alterar/:id', component: AlterarComponent },
-  { path: 'eventos-excluir', component: ExcluirComponent },
+  // páginas SEM header/sidebar
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'ingressos', component: IngressosComponent },
 
-  // Rotas de Clientes
-  { path: 'clientes-listagem', component: ListagemClientesComponent },
-  { path: 'clientes-cadastrar', component: CadastrarClientesComponent },
-  { path: 'clientes-consultar', component: ConsultarClientesComponent },
-  { path: 'clientes-alterar/:id', component: AlterarClientesComponent },
-  { path: 'clientes-excluir', component: ExcluirClientesComponent },
+  // páginas COM header/sidebar
+  {
+    path: '',
+    component: FuncionariosLayoutComponent,
+    children: [
+      // Eventos
+      { path: 'eventos-listagem', component: ListagemComponent },
+      { path: 'eventos-cadastrar', component: CadastrarComponent },
+      { path: 'eventos-consultar', component: ConsultarComponent },
+      { path: 'eventos-alterar/:id', component: AlterarComponent },
+      { path: 'eventos-excluir', component: ExcluirComponent },
 
-  // Rotas de Pedidos
-  { path: 'pedidos-listagem', component: ListagemPedidoComponent },
-  { path: 'pedidos-cadastrar', component: CadastrarPedidoComponent },
+      // Clientes
+      { path: 'clientes-listagem', component: ListagemClientesComponent },
+      { path: 'clientes-cadastrar', component: CadastrarClientesComponent },
+      { path: 'clientes-consultar', component: ConsultarClientesComponent },
+      { path: 'clientes-alterar/:id', component: AlterarClientesComponent },
+      { path: 'clientes-excluir', component: ExcluirClientesComponent },
 
-  { path: '**', redirectTo: 'eventos-listagem' }
+      // Pedidos
+      { path: 'pedidos-listagem', component: ListagemPedidoComponent },
+      { path: 'pedidos-cadastrar', component: CadastrarPedidoComponent }
+    ]
+  },
+
+  { path: '**', redirectTo: 'login' }
 ];

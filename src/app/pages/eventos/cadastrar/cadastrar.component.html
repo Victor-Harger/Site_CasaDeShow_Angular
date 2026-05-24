@@ -11,6 +11,20 @@
 
     <label for="input-banda">Banda / Atração</label><br />
     <input class="input-simples" id="input-banda" name="input-banda" placeholder="Nome da atração principal" type="text" [(ngModel)]="evento.banda" required />
+    <label for="input-genero">Gênero</label><br />
+    <select
+      class="input-simples"
+      id="input-genero"
+      name="input-genero"
+      [(ngModel)]="evento.genero"
+      required
+>
+      <option value="">Selecione</option>
+      <option value="rock">Rock</option>
+      <option value="jazz">Jazz</option>
+      <option value="classico">Clássico</option>
+      <option value="rap">Rap / Hip-Hop</option>
+    </select>
 
     <label for="input-capacidade">Capacidade de Público</label><br />
     <input class="input-simples" id="input-capacidade" name="input-capacidade" placeholder="Ex: 500" type="number" min="0" oninput="this.value = Math.abs(this.value)" [(ngModel)]="evento.capacidade" required />

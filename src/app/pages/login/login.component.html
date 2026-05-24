@@ -1,0 +1,73 @@
+<div class="login-container">
+
+<div class="bg-pattern"></div>
+<div class="bg-glow"></div>
+
+<div class="card">
+  <div class="card-top-line"></div>
+
+  <div class="logo-area">
+    <div class="logo-mark">N</div>
+    <span class="logo-name">NoirEspaço</span>
+    <span class="logo-sub">Área Restrita — Funcionários</span>
+  </div>
+
+  <hr class="divider">
+
+  <div class="error-msg" *ngIf="mensagemErro">
+    {{ mensagemErro }}
+  </div>
+
+  <div class="field">
+    <label>Usuário</label>
+    <input
+      type="text"
+      placeholder="seu.usuario"
+      [(ngModel)]="usuario"
+      (keyup.enter)="handleLogin()"
+    >
+  </div>
+
+  <div class="field">
+    <div class="field-row">
+      <label>Senha</label>
+      <a href="#" class="forgot">Esqueci minha senha</a>
+    </div>
+
+    <input
+      type="password"
+      placeholder="••••••••"
+      [(ngModel)]="senha"
+      (keyup.enter)="handleLogin()"
+    >
+  </div>
+
+  <label class="check-row">
+    <input
+      type="checkbox"
+      [(ngModel)]="lembrar"
+    >
+
+    <div class="check-box">
+      <div class="check-mark"></div>
+    </div>
+
+    <span class="check-label">
+      Manter sessão ativa
+    </span>
+  </label>
+
+  <button
+    class="btn-login"
+    [class.loading]="loading"
+    (click)="handleLogin()"
+  >
+    {{ loading ? 'Autenticando...' : 'Entrar' }}
+  </button>
+
+  <div class="card-footer">
+    Acesso exclusivo para colaboradores —
+    <a href="#">Área do cliente →</a>
+  </div>
+</div>
+  </div>

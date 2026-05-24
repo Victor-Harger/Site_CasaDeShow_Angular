@@ -1,0 +1,263 @@
+<!-- NAVBAR -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-mark">N</div>
+    <span class="nav-logo-name">NoirEspaço</span>
+  </a>
+
+  <div class="nav-right">
+    <a href="#">Área de Funcionários</a>
+  <!--  <a href="#">Sobre</a>-->
+    <div class="nav-cart" (click)="openCart()">
+      🎟 Carrinho
+      <div class="cart-badge">
+        {{ totalCarrinho }}
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Temporada 2026</div>
+
+  <h1 class="hero-title">
+    Viva a <em>noite</em><br>
+    em grande estilo
+  </h1>
+
+  <p class="hero-sub">
+    Escolha seu evento, garanta seu ingresso e faça parte de uma experiência única.
+  </p>
+</section>
+
+
+<!-- FILTROS -->
+<div class="filters">
+
+  <button class="filter-btn"
+          [class.active]="filtroAtivo === 'todos'"
+          (click)="filtrar('todos')">
+    Todos
+  </button>
+
+  <button class="filter-btn"
+          [class.active]="filtroAtivo === 'rock'"
+          (click)="filtrar('rock')">
+    Rock
+  </button>
+
+  <button class="filter-btn"
+          [class.active]="filtroAtivo === 'jazz'"
+          (click)="filtrar('jazz')">
+    Jazz
+  </button>
+
+  <button class="filter-btn"
+          [class.active]="filtroAtivo === 'classico'"
+          (click)="filtrar('classico')">
+    Clássico
+  </button>
+
+  <button class="filter-btn"
+          [class.active]="filtroAtivo === 'rap'"
+          (click)="filtrar('rap')">
+    Rap / Hip-Hop
+  </button>
+
+</div>
+
+
+<!-- EVENTOS -->
+<div class="events-grid" id="eventsGrid">
+
+  <div class="event-card"
+       *ngFor="let e of eventosFiltrados; let i = index"
+       [style.animation-delay]="(i * 0.07) + 's'">
+
+    <div class="event-banner">
+      <span class="event-genre">
+        {{ genreLabel[e.genero] }}
+      </span>
+    </div>
+
+    <div class="event-body">
+
+      <div class="event-date">
+        {{ e.data }}
+      </div>
+
+      <div class="event-name">
+        {{ e.nome }}
+      </div>
+
+      <div class="event-band">
+        {{ e.banda }}
+      </div>
+
+      <div class="event-meta">
+
+        <div class="meta-item">
+          🎤 <strong>{{ genreLabel[e.genero] }}</strong>
+        </div>
+
+        <div class="meta-item">
+          👤 Cap. <strong>{{ e.cap }}</strong>
+        </div>
+
+        <div class="meta-item">
+          <span class="availability"
+                [class.ok]="e.vagas >= 50"
+                [class.low]="e.vagas < 50">
+
+            {{ e.vagas < 50 ? '⚠ ' + e.vagas + ' restantes' : 'Disponível' }}
+
+          </span>
+        </div>
+
+      </div>
+
+      <div class="event-footer">
+
+        <div class="event-price">
+          <span>R$</span>{{ e.preco }}
+        </div>
+
+        <button class="btn-buy"
+                [class.added]="estaNoCarrinho(e.id)"
+                (click)="addToCart(e.id)">
+
+          {{ estaNoCarrinho(e.id) ? '✓ Adicionado' : 'Comprar' }}
+
+        </button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- MODAL -->
+<div class="overlay"
+     [class.open]="overlayAberto"
+     (click)="closeCartOutside($event)">
+
+  <div class="modal">
+
+    <div class="modal-top-line"></div>
+
+    <div class="modal-header">
+      <span class="modal-title">Seu carrinho</span>
+
+      <button class="modal-close"
+              (click)="closeCart()">
+        ✕
+      </button>
+    </div>
+
+    <div class="modal-body">
+
+      <div *ngIf="carrinho.length === 0"
+           class="cart-empty">
+        Nenhum ingresso no carrinho.
+      </div>
+
+
+      <div *ngFor="let c of carrinho"
+           class="cart-item">
+
+        <div class="cart-item-info">
+          <div class="cart-item-name">{{ c.nome }}</div>
+          <div class="cart-item-date">{{ c.data }} — {{ c.banda }}</div>
+        </div>
+
+        <div class="qty-ctrl">
+          <button class="qty-btn" (click)="changeQty(c.id,-1)">−</button>
+          <span class="qty-num">{{ c.qty }}</span>
+          <button class="qty-btn" (click)="changeQty(c.id,1)">+</button>
+        </div>
+
+        <div class="cart-item-price">
+          R$ {{ c.qty * c.preco }}
+        </div>
+
+        <button class="cart-remove"
+                (click)="removeItem(c.id)">
+          ✕
+        </button>
+
+      </div>
+
+
+      <div *ngIf="carrinho.length > 0"
+           class="cart-total-row">
+
+        <span class="cart-total-label">Total</span>
+        <span class="cart-total-value">
+          R$ {{ valorTotal }}
+        </span>
+
+      </div>
+
+
+      <!-- CHECKOUT -->
+      <div class="checkout-section"
+           *ngIf="carrinho.length > 0 && !compraFinalizada">
+
+        <div class="checkout-title">
+          Dados para o ingresso
+        </div>
+
+        <div class="checkout-field">
+          <label>Nome completo</label>
+          <input [(ngModel)]="nome">
+        </div>
+
+        <div class="checkout-field">
+          <label>Email</label>
+          <input [(ngModel)]="email">
+        </div>
+
+        <div class="checkout-field">
+          <label>CPF</label>
+          <input [(ngModel)]="cpf">
+        </div>
+
+        <div class="checkout-field">
+          <label>Telefone</label>
+          <input [(ngModel)]="telefone">
+        </div>
+
+        <button class="btn-checkout"
+                (click)="finalizar()">
+          Finalizar compra
+        </button>
+      </div>
+
+
+      <!-- SUCESSO -->
+      <div class="success-screen"
+           [class.show]="compraFinalizada">
+
+        <div class="success-icon">✓</div>
+
+        <div class="success-title">
+          Compra confirmada!
+        </div>
+
+        <div class="success-sub">
+          Seus ingressos foram enviados para o e-mail cadastrado.
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<footer>
+  NoirEspaço © 2026 —
+  <a routerLink="/login">Acesso funcionários</a>
+</footer>

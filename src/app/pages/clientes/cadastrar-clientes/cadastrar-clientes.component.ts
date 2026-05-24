@@ -20,10 +20,18 @@ export class CadastrarClientesComponent {
     private router: Router
   ) { }
 
+  private gerarIdNumerico(): number {
+    // 6 dígitos (ex.: 100000 a 999999) 
+    return Math.floor(100000 + Math.random() * 900000);
+  }
+
   submeter() {
-    // Chama o POST do serviço e redireciona para a listagem quando terminar
+    // Garante que o id seja numérico e curto para facilitar busca
+    this.cliente.id = this.gerarIdNumerico();
+
     this.service.incluir(this.cliente).subscribe(() => {
       this.router.navigate(['/clientes-listagem']);
     });
   }
 }
+

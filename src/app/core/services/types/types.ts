@@ -5,6 +5,7 @@ export interface Evento {
   banda: string;
   capacidade: number;
   precoIngresso: number;
+  genero: string;
 }
 
 export interface Cliente {

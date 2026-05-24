@@ -1,35 +1,37 @@
 {
+  "funcionarios": [
+    {
+      "username": "teste",
+      "password": "teste",
+      "id": "S_ECkl28puM"
+    }
+  ],
   "eventos": [
     {
-      "id": 2,
-      "nome": "Sertanejo VIP",
-      "data": "2026-06-20",
-      "banda": "Dupla XP",
-      "capacidade": 800,
-      "precoIngresso": 120
+      "id": 534010,
+      "nome": "Victor Harger2222",
+      "data": "2000-05-04",
+      "banda": "Banda Rock",
+      "capacidade": 50,
+      "precoIngresso": 50
     }
   ],
   "clientes": [
     {
       "id": 1,
-      "nome": "Enzo",
-      "email": "enzo@gmail.com",
-      "telefone": "(11)97654-0075"
-    },
-    {
-      "id": 2,
-      "nome": "Valentina",
-      "email": "valentina@gmail.com",
-      "telefone": "(11)98765-9087"
+      "nome": "ANA PAULA PRADO2222",
+      "email": "victorgabrielpradoharger@outlook.com",
+      "telefone": "11948929590"
     }
   ],
   "pedidos": [
     {
-      "id": 1,
       "clienteId": 1,
-      "eventoId": 2,
-      "data": "2026-05-19",
-      "total": 120
+      "eventoId": 534010,
+      "data": "2026-05-24",
+      "total": 50,
+      "id": 1
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

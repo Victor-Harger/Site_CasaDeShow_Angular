@@ -27,11 +27,19 @@ export class CadastrarPedidoComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.cService.listar().subscribe(c => this.listaClientes = c);
-    this.eService.listar().subscribe(e => this.listaEventos = e);
+    this.cService.listar().subscribe(c => (this.listaClientes = c));
+    this.eService.listar().subscribe(e => (this.listaEventos = e));
+  }
+
+  private gerarIdNumerico(): number {
+    // 6 dígitos (ex.: 100000 a 999999)
+    return Math.floor(100000 + Math.random() * 900000);
   }
 
   submeter() {
+    // Garante que o id seja numérico (se o backend/json-server aceitar)
+    this.pedido.id = this.gerarIdNumerico();
+
     this.pService.incluir(this.pedido).subscribe(() => {
       this.router.navigate(['/pedidos-listagem']);
     });
@@ -44,3 +52,4 @@ export class CadastrarPedidoComponent implements OnInit {
     }
   }
 }
+

@@ -32,7 +32,7 @@ export class ListagemClientesComponent implements OnInit {
       if(confirm('Tens a certeza que desejas excluir este cliente?')) {
         this.service.excluir(id).subscribe(() => {
           // Atualiza a tabela removendo o cliente apagado
-          this.listaClientes = this.listaClientes.filter(cliente => cliente.id !== id);
+          this.listaClientes = this.listaClientes.filter(cliente => String(cliente.id) !== String(id));
         });
       }
     }

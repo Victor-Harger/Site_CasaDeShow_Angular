@@ -1,18 +1,37 @@
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common'; // Necessário para o [ngClass]
+import { Component, HostListener } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterModule, CommonModule],
+  imports: [RouterLink, RouterLinkActive, CommonModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  menuExpandido = true; // Começa aberto
+  scrolled = false;
+  mobileMenuAberto = false;
 
-  alternarMenu() {
-    this.menuExpandido = !this.menuExpandido;
+  @HostListener('window:scroll')
+  onScroll(): void {
+    this.scrolled = window.scrollY > 20;
+  }
+
+  toggleMobileMenu(): void {
+    this.mobileMenuAberto = !this.mobileMenuAberto;
+  }
+
+  fecharMobileMenu(): void {
+    this.mobileMenuAberto = false;
+  }
+
+  @HostListener('document:click', ['$event'])
+  onClickFora(event: MouseEvent): void {
+    const target = event.target as HTMLElement;
+    const clickDentroDoMenu = target.closest('#mobile-menu') || target.closest('.hamburger');
+    if (!clickDentroDoMenu) {
+      this.mobileMenuAberto = false;
+    }
   }
 }
