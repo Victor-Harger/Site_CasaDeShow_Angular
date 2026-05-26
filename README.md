@@ -190,7 +190,7 @@ Consulte a seção de configuração acima para gerar e configurar sua própria 
 ---
 ## 👤 Autor
 
-Desenvolvido por **Victor** como projeto acadêmico para o SENAC.
+Desenvolvido por **Victor Gabriel** como projeto acadêmico para o SENAC.
 
-[![Victor-Harger](https://img.shields.io/badge/GitHub-seu--usuario-181717?style=flat&logo=github)](https://github.com/seu-usuario)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Victor-0077B5?style=flat&logo=linkedin)](www.linkedin.com/in/victor-gabriel-prado-harger)
+[![GitHub](https://img.shields.io/badge/GitHub-Victor--Harger-181717?style=flat&logo=github)](https://github.com/Victor-Harger/Site_CasaDeShow_Angular)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Victor%20Gabriel-0077B5?style=flat&logo=linkedin)](https://www.linkedin.com/in/victor-gabriel-prado-harger)
