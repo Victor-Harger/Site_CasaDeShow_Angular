@@ -27,7 +27,7 @@ Aplicação completa de gerenciamento de uma casa de shows fictícia, com área 
 
 ### Vídeo
 
-[![Demonstração do Noctis Hall](https://img.youtube.com/vi/SEU_VIDEO_ID/maxresdefault.jpg)](https://www.youtube.com/watch?v=xSyx66wSqGU)
+[![Demonstração do Noctis Hall](https://img.youtube.com/vi/xSyx66wSqGU/maxresdefault.jpg)](https://www.youtube.com/watch?v=xSyx66wSqGU)
 
 ---
 
