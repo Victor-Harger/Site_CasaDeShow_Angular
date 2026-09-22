@@ -66,10 +66,10 @@ Aplicação completa de gerenciamento de uma casa de shows fictícia, com área 
 
 ```bash
 # Clone o repositório
-git clone https://github.com/Victor-Harger/casadeshow-senac.git
+git clone https://github.com/Victor-Harger/Site_CasaDeShow_Angular.git
 
 # Entre na pasta
-cd casadeshow-senac
+cd Site_CasaDeShow_Angular
 
 # Instale as dependências
 npm install
