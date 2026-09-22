@@ -5,6 +5,32 @@ Aplicação completa de gerenciamento de uma casa de shows fictícia, com área 
 
 ---
 
+## Demo
+
+### Screenshots
+
+<p align="center">
+  <img src="docs/screenshots/vitrine.png" alt="Vitrine de eventos" width="700"/>
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/drawer.png" alt="Drawer de detalhes" width="700"/>
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/carrinho.png" alt="Carrinho de compras" width="700"/>
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/admin-eventos.png" alt="Área administrativa — Eventos" width="700"/>
+</p>
+
+### Vídeo
+
+[![Demonstração do Noctis Hall](https://img.youtube.com/vi/xSyx66wSqGU/maxresdefault.jpg)](https://www.youtube.com/watch?v=xSyx66wSqGU)
+
+---
+
 ## 🖥️ Demonstração
 
 | Área Pública | Área Administrativa |
