@@ -15,11 +15,11 @@ A aplicação conta com recursos como catálogo de eventos, filtros, visualizaç
 
 <img src="Prints/VitrineEventos.png" alt="Vitrine de eventos" width="600"/>
 
-<img src="docs/screenshots/DrawerEventos.png" alt="Drawer de detalhes do evento" width="600"/>
+<img src="Prints/DrawerEventos.png" alt="Drawer de detalhes do evento" width="600"/>
 
-<img src="docs/screenshots/CarrinhoCompras.png" alt="Carrinho de compras" width="600"/>
+<img src="Prints/CarrinhoCompras.png" alt="Carrinho de compras" width="600"/>
 
-<img src="docs/screenshots/Adminstricacao.png" alt="Área administrativa — Eventos" width="600"/>
+<img src="Prints/Adminstricacao.png" alt="Área administrativa — Eventos" width="600"/>
 
 ### Demonstração em vídeo
 
