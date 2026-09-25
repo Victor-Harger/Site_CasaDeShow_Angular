@@ -135,43 +135,23 @@ http://localhost:4200
 
 ---
 
-## Estrutura das funcionalidades
+##  Funcionalidades
 
-### Área Pública — `/ingressos`
+### Área Pública (`/ingressos`)
+- Vitrine de eventos com filtro por gênero musical
+- **Drawer lateral** com detalhes do evento ao clicar no card
+- Carrinho de compras com controle de quantidade
+- Checkout que cadastra o cliente automaticamente
+- **Mapa de rotas** integrado para orientar o cliente até o local do evento
 
-* Vitrine de eventos
-* Filtro por gênero musical
-* Cards de eventos
-* **Drawer lateral** com informações detalhadas
-* Carrinho de compras
-* Controle de quantidade de ingressos
-* Checkout
-* Cadastro automático de clientes
-* **Mapa de rotas integrado ao Google Maps**
+### Área Administrativa (`/login`)
+- Autenticação de funcionários
+- **Eventos** — Cadastrar, listar, consultar, editar e excluir
+- **Clientes** — Cadastrar, listar, consultar, editar e excluir  
+- **Pedidos** — Listar e registrar vendas manualmente
+- Sidebar retrátil com navegação categorizada
 
-### Área Administrativa — `/login`
-
-* Autenticação de funcionários
-* **Eventos**
-
-  * Cadastrar
-  * Listar
-  * Consultar
-  * Editar
-  * Excluir
-* **Clientes**
-
-  * Cadastrar
-  * Listar
-  * Consultar
-  * Editar
-  * Excluir
-* **Pedidos**
-
-  * Listar
-  * Registrar vendas manualmente
-* Sidebar retrátil
-* Navegação categorizada
+---
 
 ---
 
