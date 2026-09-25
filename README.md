@@ -1,3 +1,5 @@
+<div align="center">
+
 # Noctis Hall — Sistema de Casa de Shows
 
 Projeto acadêmico desenvolvido para o curso de Desenvolvimento Web do **SENAC**, criado com **Angular, TypeScript e JSON-Server**.
@@ -6,8 +8,6 @@ O **Noctis Hall** é uma aplicação web completa para gerenciamento de uma casa
 A aplicação conta com recursos como catálogo de eventos, filtros, visualização detalhada, carrinho de compras, checkout, gerenciamento de clientes, pedidos e eventos, autenticação de funcionários e integração com o Google Maps para auxiliar o cliente a encontrar o local do evento.
 
 ---
-
-<div align="center">
 
 ## Visão geral
 
@@ -26,8 +26,6 @@ A aplicação conta com recursos como catálogo de eventos, filtros, visualizaç
 <a href="https://www.youtube.com/watch?v=xSyx66wSqGU">
   <img src="https://img.youtube.com/vi/xSyx66wSqGU/maxresdefault.jpg" alt="Demonstração do Noctis Hall" width="650"/>
 </a>
-
-</div>
 
 ---
 
@@ -69,7 +67,7 @@ Antes de iniciar, certifique-se de ter instalado:
 
 ```bash
 # Clone o repositório
-git clone https://github.com/Victor-Harger/Site_CasaDeShow_Angular.git
+git clone [https://github.com/Victor-Harger/Site_CasaDeShow_Angular.git](https://github.com/Victor-Harger/Site_CasaDeShow_Angular.git)
 
 # Entre na pasta
 cd Site_CasaDeShow_Angular
@@ -139,43 +137,23 @@ http://localhost:4200
 
 ---
 
-## Estrutura das funcionalidades
+## Funcionalidades[cite: 1]
 
-### Área Pública — `/ingressos`
+### Área Pública ( `/ingressos` )[cite: 1]
 
-* Vitrine de eventos
-* Filtro por gênero musical
-* Cards de eventos
-* **Drawer lateral** com informações detalhadas
-* Carrinho de compras
-* Controle de quantidade de ingressos
-* Checkout
-* Cadastro automático de clientes
-* **Mapa de rotas integrado ao Google Maps**
+* Vitrine de eventos com filtro por gênero musical[cite: 1]
+* **Drawer lateral** com detalhes do evento ao clicar no card[cite: 1]
+* Carrinho de compras com controle de quantidade[cite: 1]
+* Checkout que cadastra o cliente automaticamente[cite: 1]
+* **Mapa de rotas** integrado para orientar o cliente até o local do evento[cite: 1]
 
-### Área Administrativa — `/login`
+### Área Administrativa ( `/login` )[cite: 1]
 
-* Autenticação de funcionários
-* **Eventos**
-
-  * Cadastrar
-  * Listar
-  * Consultar
-  * Editar
-  * Excluir
-* **Clientes**
-
-  * Cadastrar
-  * Listar
-  * Consultar
-  * Editar
-  * Excluir
-* **Pedidos**
-
-  * Listar
-  * Registrar vendas manualmente
-* Sidebar retrátil
-* Navegação categorizada
+* Autenticação de funcionários[cite: 1]
+* **Eventos** — Cadastrar, listar, consultar, editar e excluir[cite: 1]
+* **Clientes** — Cadastrar, listar, consultar, editar e excluir[cite: 1]
+* **Pedidos** — Listar e registrar vendas manualmente[cite: 1]
+* Sidebar retrátil com navegação categorizada[cite: 1]
 
 ---
 
@@ -196,3 +174,5 @@ Desenvolvido por **Victor Gabriel** e **Yago Santos** como projeto acadêmico pa
 [![GitHub](https://img.shields.io/badge/GitHub-Victor--Harger-181717?style=flat\&logo=github)](https://github.com/Victor-Harger/Site_CasaDeShow_Angular) [![LinkedIn](https://img.shields.io/badge/LinkedIn-Victor%20Gabriel-0077B5?style=flat\&logo=linkedin)](https://www.linkedin.com/in/victor-gabriel-prado-harger)
 
 [![GitHub](https://img.shields.io/badge/GitHub-Yago--Silva-181717?style=flat\&logo=github)](https://github.com/yago-silva-ads/Site_CasaDeShow_Angular) [![LinkedIn](https://img.shields.io/badge/LinkedIn-Yago%20Santos%20Silva-0077B5?style=flat\&logo=linkedin)](https://www.linkedin.com/in/yago-santos-silva-aa3233245)
+
+</div>
