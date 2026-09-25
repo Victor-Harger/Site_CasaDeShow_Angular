@@ -1,37 +1,33 @@
-# 🎶 Noctis Hall — Sistema de Casa de Shows
+# Noctis Hall — Sistema de Casa de Shows
 
-Projeto acadêmico desenvolvido para o curso de desenvolvimento web do **SENAC**.  
+Projeto acadêmico desenvolvido para o curso de desenvolvimento web do **SENAC**.
 Aplicação completa de gerenciamento de uma casa de shows fictícia, com área pública de compra de ingressos e área privada de administração.
 
 ---
+
+<div align="center">
 
 ## Demo
 
 ### Screenshots
 
-<p align="center">
-  <img src="docs/screenshots/vitrine.png" alt="Vitrine de eventos" width="700"/>
-</p>
+<img src="docs/screenshots/vitrine.png" alt="Vitrine de eventos" width="700"/>
 
-<p align="center">
-  <img src="docs/screenshots/drawer.png" alt="Drawer de detalhes" width="700"/>
-</p>
+<img src="docs/screenshots/drawer.png" alt="Drawer de detalhes" width="700"/>
 
-<p align="center">
-  <img src="docs/screenshots/carrinho.png" alt="Carrinho de compras" width="700"/>
-</p>
+<img src="docs/screenshots/carrinho.png" alt="Carrinho de compras" width="700"/>
 
-<p align="center">
-  <img src="docs/screenshots/admin-eventos.png" alt="Área administrativa — Eventos" width="700"/>
-</p>
+<img src="docs/screenshots/admin-eventos.png" alt="Área administrativa — Eventos" width="700"/>
 
 ### Vídeo
 
 [![Demonstração do Noctis Hall](https://img.youtube.com/vi/xSyx66wSqGU/maxresdefault.jpg)](https://www.youtube.com/watch?v=xSyx66wSqGU)
 
+</div>
+
 ---
 
-## 🖥️ Demonstração
+## Demonstração
 
 | Área Pública | Área Administrativa |
 |---|---|
@@ -43,7 +39,7 @@ Aplicação completa de gerenciamento de uma casa de shows fictícia, com área 
 
 ---
 
-## 🚀 Tecnologias
+## Tecnologias
 
 - **Angular 19** — Standalone Components
 - **TypeScript 5.7**
@@ -54,7 +50,7 @@ Aplicação completa de gerenciamento de uma casa de shows fictícia, com área 
 
 ---
 
-## ⚙️ Como rodar o projeto
+## Como rodar o projeto
 
 ### Pré-requisitos
 
@@ -78,17 +74,35 @@ npm install
 npm install -g json-server
 ```
 
-### Configuração da API Key
+### Configuração da API Key (Google Maps)
 
-O projeto usa a Google Maps Embed API para exibir rotas.  
-Você precisa criar seu próprio arquivo de environment:
+O projeto utiliza a **Google Maps Embed API** para exibir o mapa de rotas até o local do evento na página de detalhes.
+Para que esse recurso funcione corretamente, você precisa gerar sua própria chave de API e configurá-la localmente.
+
+**1. Gere sua chave no Google Cloud Console**
+
+Acesse [console.cloud.google.com](https://console.cloud.google.com), crie um projeto (ou use um existente), ative a **Maps Embed API** e gere uma chave de API em **APIs e Serviços > Credenciais**.
+
+**2. Crie o arquivo de environment local**
+
+O repositório inclui um arquivo de exemplo (`environment.example.ts`) para você não precisar criar do zero.
+Execute o comando abaixo para copiá-lo com o nome correto:
 
 ```bash
-# Copie o arquivo de exemplo
 cp src/environments/environment.example.ts src/environments/environment.ts
 ```
 
-Abra o `environment.ts` e substitua `SUA_KEY_AQUI` pela sua chave gerada no [Google Cloud Console](https://console.cloud.google.com).
+> O arquivo `environment.ts` está no `.gitignore` — sua chave nunca será enviada ao repositório.
+
+**3. Insira sua chave no arquivo**
+
+Abra `src/environments/environment.ts` e substitua o valor `SUA_KEY_AQUI` pela chave que você gerou:
+
+```typescript
+export const environment = {
+  googleMapsApiKey: 'SUA_KEY_AQUI' // <- substitua aqui
+};
+```
 
 ### Rodando a aplicação
 
@@ -101,14 +115,14 @@ json-server --watch db.json
 
 **Terminal 2 — Angular:**
 ```bash
-ng serve
+ng serve --open
 ```
 
-Acesse: [http://localhost:4200](http://localhost:4200)
+O `--open` abre o navegador automaticamente em [http://localhost:4200](http://localhost:4200).
 
 ---
 
-## 🗂️ Funcionalidades
+## Funcionalidades
 
 ### Área Pública (`/ingressos`)
 - Vitrine de eventos com filtro por gênero musical
@@ -126,15 +140,15 @@ Acesse: [http://localhost:4200](http://localhost:4200)
 
 ---
 
-## 🔐 Segurança
+## Segurança
 
-A API key do Google Maps **não está versionada** neste repositório.  
-O arquivo `src/environments/environment.ts` está listado no `.gitignore`.  
+A API key do Google Maps **não está versionada** neste repositório.
+O arquivo `src/environments/environment.ts` está listado no `.gitignore`.
 Consulte a seção de configuração acima para gerar e configurar sua própria chave.
 
 ---
 
-## 👤 Autor
+## Autor
 
 Desenvolvido por **Victor Gabriel** e **Yago Santos** como projeto acadêmico para o SENAC.
 
