@@ -13,7 +13,7 @@ A aplicação conta com recursos como catálogo de eventos, filtros, visualizaç
 
 ### Interface e funcionalidades
 
-<img src="docs/Prints/VitrineEventos.png" alt="Vitrine de eventos" width="600"/>
+<img src="Prints/VitrineEventos.png" alt="Vitrine de eventos" width="600"/>
 
 <img src="docs/screenshots/DrawerEventos.png" alt="Drawer de detalhes do evento" width="600"/>
 
