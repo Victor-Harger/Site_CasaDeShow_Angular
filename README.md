@@ -25,6 +25,7 @@ A aplicação conta com recursos como catálogo de eventos, filtros, visualizaç
 <p align="center">
   <img src="Prints/AdmVendas.png" alt="Área administrativa — Vendas" width="48%"/>
 </p>
+
 ### Demonstração em vídeo
 
 <a href="https://www.youtube.com/watch?v=xSyx66wSqGU">
