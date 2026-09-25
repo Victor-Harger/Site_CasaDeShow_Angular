@@ -14,7 +14,9 @@ A aplicação conta com recursos como catálogo de eventos, filtros, visualizaç
 ### Interface e funcionalidades
 
 <img src="Prints/VitrineEventos.png" alt="Vitrine de eventos" width="600"/> <img src="Prints/DrawerEventos.png" alt="Drawer de detalhes do evento" width="600"/>
+<img src="Prints/DrawerEventos.png" alt="Área administrativa — Eventos" width="600"/>
 <img src="Prints/CarrinhoCompras.png" alt="Carrinho de compras" width="600"/> <img src="Prints/Adminstricacao.png" alt="Área administrativa — Eventos" width="600"/>
+<img src="Prints/AdmVendas.png" alt="Área administrativa — Eventos" width="600"/>
 
 ### Demonstração em vídeo
 
