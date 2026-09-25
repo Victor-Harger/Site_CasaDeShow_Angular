@@ -113,10 +113,6 @@ export const environment = {
 
 Substitua `SUA_KEY_AQUI` pela chave de API que você gerou no Google Cloud Console.
 
-#### 3. Não envie sua chave para o GitHub
-
-O arquivo `src/environments/environment.ts` está listado no `.gitignore`, portanto sua chave configurada localmente não será versionada no repositório.
-
 ### Rodando a aplicação
 
 Abra **dois terminais** na pasta do projeto.
