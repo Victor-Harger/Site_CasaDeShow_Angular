@@ -153,8 +153,6 @@ http://localhost:4200
 
 ---
 
----
-
 ## Segurança
 
 A API Key do Google Maps **não está versionada** neste repositório.
