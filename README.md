@@ -3,7 +3,6 @@
 Projeto acadêmico desenvolvido para o curso de Desenvolvimento Web do **SENAC**, criado com **Angular, TypeScript e JSON-Server**.
 
 O **Noctis Hall** é uma aplicação web completa para gerenciamento de uma casa de shows fictícia. O projeto foi desenvolvido simulando dois ambientes distintos: uma área pública, voltada para clientes que desejam consultar eventos e realizar compras de ingressos, e uma área administrativa, destinada ao gerenciamento da operação da casa de shows.
-
 A aplicação conta com recursos como catálogo de eventos, filtros, visualização detalhada, carrinho de compras, checkout, gerenciamento de clientes, pedidos e eventos, autenticação de funcionários e integração com o Google Maps para auxiliar o cliente a encontrar o local do evento.
 
 ---
@@ -29,36 +28,6 @@ A aplicação conta com recursos como catálogo de eventos, filtros, visualizaç
 </a>
 
 </div>
-
----
-
-## Sobre o projeto
-
-O **Noctis Hall** foi desenvolvido como um projeto acadêmico com o objetivo de aplicar, em uma única aplicação, conceitos de desenvolvimento web, componentização, consumo de APIs, gerenciamento de estado, formulários, navegação entre páginas e organização de uma aplicação Angular.
-
-A proposta foi simular o funcionamento de uma casa de shows desde a perspectiva do cliente até as rotinas administrativas internas.
-
-### Experiência do cliente
-
-Na área pública, o usuário pode navegar pelos eventos disponíveis, utilizar filtros para encontrar apresentações de seu interesse e abrir um **drawer lateral** com informações detalhadas sobre cada evento.
-
-Após escolher um evento, é possível adicionar ingressos ao carrinho, controlar a quantidade desejada e finalizar a compra através do checkout. Durante esse processo, o cliente é cadastrado automaticamente no sistema.
-
-A página de detalhes também conta com um **mapa de rotas integrado ao Google Maps**, permitindo visualizar a localização do evento e auxiliar no deslocamento até o local.
-
-### Área administrativa
-
-A aplicação também possui uma área restrita destinada aos funcionários da casa de shows.
-
-Após o login, o funcionário pode acessar diferentes módulos administrativos para controlar os dados utilizados pela aplicação. O sistema permite realizar operações de **CRUD de eventos e clientes**, além de consultar e registrar pedidos manualmente.
-
-A interface administrativa conta ainda com uma **sidebar retrátil e navegação categorizada**, permitindo organizar os diferentes recursos disponíveis no sistema.
-
-### Objetivo acadêmico
-
-Mais do que representar visualmente uma casa de shows, o projeto foi utilizado para colocar em prática conceitos estudados durante o curso, principalmente relacionados à construção de aplicações web utilizando Angular e TypeScript.
-
-A estrutura foi organizada buscando separar responsabilidades entre componentes, serviços e demais partes da aplicação, enquanto o **JSON-Server** foi utilizado como uma API fake para simular a comunicação com um backend durante o desenvolvimento.
 
 ---
 
